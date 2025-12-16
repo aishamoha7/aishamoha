@@ -11,6 +11,8 @@
   --text-main: #00272B;
   --text-light: #517579;
   --text-muted: #ffffff70;
+  --text-new: #42CCB2;
+  --text-new2: #42CCB2;
 
   /* Backgrounds */
   --background: #FFFFFF;
@@ -51,6 +53,8 @@
   --text-main: #F5F5F5;
   --text-light: #ffffffb7;
   --text-muted: #889999;
+  --text-new: #ffffff;
+  --text-new2: #42CCB2;
 
   --background: #023335;
   /* Darker Deep Teal */
@@ -94,6 +98,12 @@ a {
   width: 100%;
   margin: 0 auto;
   padding: 0 var(--spacing-lg);
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 16px;
+  }
 }
 
 /* Typography Utilities */

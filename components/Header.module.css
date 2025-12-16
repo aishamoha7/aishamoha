@@ -37,6 +37,12 @@
     letter-spacing: 0.5px;
 }
 
+.dot {
+    font-size: 1.5rem;
+    color: var(--text-new);
+    font-weight: 700;
+}
+
 .nav {
     display: flex;
     align-items: center;
@@ -45,35 +51,66 @@
     margin-left: 2rem;
 }
 
+/* Focus Lens Hover Effect */
 .link {
     font-size: 1rem;
     font-weight: bold;
     color: var(--text-main);
     position: relative;
-    padding: 5px 0;
+    padding: 5px 10px;
+    /* Added padding for space for the lens */
+    transition: color 0.3s ease;
 }
 
-.link::after {
+/* Clear previous pseudo-elements if any from underline logic */
+.link::after,
+.link::before {
     content: '';
     position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
+    width: 10px;
+    height: 10px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    border-color: var(--text-new2);
+    /* Using the new teal color */
+}
+
+/* Top-Left Corner */
+.link::before {
+    top: 0;
     left: 0;
-    background-color: var(--secondary);
-    transition: width 0.3s ease;
+    border-top: 2px solid var(--text-new2);
+    border-left: 2px solid var(--text-new2);
+    transform: translate(5px, 5px);
+}
+
+/* Bottom-Right Corner */
+.link::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid var(--text-new2);
+    border-right: 2px solid var(--text-new2);
+    transform: translate(-5px, -5px);
+}
+
+/* Hover State */
+.link:hover {
+    color: var(--text-new2);
+}
+
+.link:hover::before {
+    opacity: 1;
+    transform: translate(0, 0);
 }
 
 .link:hover::after {
-    width: 100%;
+    opacity: 1;
+    transform: translate(0, 0);
 }
 
-.link:hover {
-    color: var(--primary);
-}
-
-[data-theme='dark'] .link:hover {
-    color: var(--secondary);
+/* Active State Styles */
+.active {
+    color: var(--text-new2) !important;
 }
 
 .actions {
@@ -97,16 +134,11 @@
 .ctaBtn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(1, 51, 53, 0.2);
-    /* Shadow based on primary color */
 }
 
-/* Theme specific overrides if needed, but primary text on white usually works, or reverse. 
-   Let's check dark mode. Primary is Lime in dark mode. Text should be dark. */
 [data-theme='dark'] .ctaBtn {
     background-color: var(--primary);
-    /* Lime */
     color: #00272B;
-    /* Dark Text */
 }
 
 .themeBtn {
@@ -128,14 +160,29 @@
     transform: rotate(15deg);
 }
 
-/* Mobile Responsive */
+/* Tablet & Mobile Responsive */
+@media (max-width: 900px) {
+    .nav {
+        /* Hide standard nav, use bottom stacking or burger if requested. 
+           User asked for tablet/mobile optimization. 
+           Current implementation: Bottom Nav for mobile. 
+           Let's refine this for layout. */
+        display: none;
+    }
+
+    .container {
+        /* Adjust header grid for smaller screens if needed */
+        grid-template-columns: 1fr auto;
+    }
+
+    .actions {
+        display: none;
+        /* Often hidden on mobile/tablet if space is tight, or moved */
+    }
+}
+
 @media (max-width: 768px) {
     .nav {
-        display: none;
-        /* For MVP we hide nav on mobile or rely on a burger menu. 
-                        A simpler approach for now is just wrapping/stacking or hiding non-essentials.
-                        Let's keep it simple: reduce gap and maybe hide less important links or just scrollable x. */
-        /* Re-enabling for basic mobile view */
         display: flex;
         position: fixed;
         bottom: 0;
@@ -149,11 +196,12 @@
         border-top: 1px solid var(--glass-border);
     }
 
-    .themeBtn {
-        margin-left: 0;
+    .header {
+        padding: 0.8rem 0;
     }
 
-    .header {
-        padding: 1rem 0;
+    /* Adjust logo for mobile */
+    .logo a {
+        font-size: 1.25rem;
     }
 }

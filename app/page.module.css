@@ -122,17 +122,26 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .hero {
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    padding-top: 6rem;
+    padding-top: 8rem;
+    /* Adjusted for tablet */
   }
 
   .heroContent {
     max-width: 100%;
     margin-bottom: 3rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 6rem;
+    /* Standard mobile padding */
   }
 
   .ctaGroup {
@@ -142,8 +151,24 @@
   .headline {
     font-size: 2.5rem;
   }
+}
 
-  .heroImage {
-    max-width: 300px;
+@media (max-width: 600px) {
+  .hero {
+    padding-bottom: 2rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  /* Hide visual blob on mobile portrait as requested */
+  .heroVisual {
+    display: none;
+  }
+
+  .headline {
+    font-size: 2rem;
   }
 }

@@ -5,6 +5,41 @@
     /* Slight contrast to other sections */
 }
 
+/* RWD */
+@media (max-width: 900px) {
+    .section {
+        padding: 4rem 1rem;
+        /* Added horizontal padding for tablet/mobile */
+        border-radius: 1.2rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cols for tablet */
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .section {
+        padding: 3rem 1rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        /* 1 col for mobile */
+        gap: 1.5rem;
+    }
+
+    .header {
+        margin-bottom: 2.5rem;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+}
+
 .header {
     text-align: center;
     margin-bottom: 4rem;
@@ -12,7 +47,7 @@
 
 .label {
     display: block;
-    color: var(--primary);
+    color: var(--text-new2);
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.9rem;

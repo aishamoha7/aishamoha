@@ -1,10 +1,12 @@
 "use client";
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import styles from './Header.module.css';
 
 export default function Header() {
     const [theme, setTheme] = useState('light');
+    const pathname = usePathname();
 
     useEffect(() => {
         const savedTheme = localStorage.getItem('theme') || 'light';
@@ -24,14 +26,15 @@ export default function Header() {
             <div className={`container ${styles.container}`}>
                 <div className={styles.logo}>
                     <Link href="/">Aisha Mohamed</Link>
+                    <span className={styles.dot}>.</span>
                 </div>
                 <nav className={styles.nav}>
-                    <Link href="/" className={styles.link}>Home</Link>
-                    <Link href="/about" className={styles.link}>About</Link>
-                    <Link href="/services" className={styles.link}>Services</Link>
-                    <Link href="/portfolio" className={styles.link}>Portfolio</Link>
-                    <Link href="/odoo" className={styles.link}>Odoo ERP</Link>
-                    <Link href="/contact" className={styles.link}>Contact</Link>
+                    <Link href="/" className={`${styles.link} ${pathname === '/' ? styles.active : ''}`}>Home</Link>
+                    <Link href="/about" className={`${styles.link} ${pathname === '/about' ? styles.active : ''}`}>About</Link>
+                    <Link href="/services" className={`${styles.link} ${pathname === '/services' ? styles.active : ''}`}>Services</Link>
+                    <Link href="/portfolio" className={`${styles.link} ${pathname === '/portfolio' ? styles.active : ''}`}>Portfolio</Link>
+                    <Link href="/odoo" className={`${styles.link} ${pathname === '/odoo' ? styles.active : ''}`}>Odoo ERP</Link>
+                    <Link href="/contact" className={`${styles.link} ${pathname === '/contact' ? styles.active : ''}`}>Contact</Link>
                 </nav>
                 <div className={styles.actions}>
                     <Link href="/contact" className={styles.ctaBtn}>Hire Me</Link>

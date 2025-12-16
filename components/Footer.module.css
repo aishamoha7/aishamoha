@@ -42,7 +42,24 @@
 
 /* Links */
 .quickLinks {
-    margin-left: 8rem
+    margin-left: 8rem;
+}
+
+@media (max-width: 900px) {
+    .quickLinks {
+        margin-left: 0;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        /* Stack on tablet/mobile */
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .socials {
+        justify-content: center;
+    }
 }
 
 .links {

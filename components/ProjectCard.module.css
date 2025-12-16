@@ -29,6 +29,17 @@
     grid-row: span 1;
 }
 
+/* RWD: Reset grid spans on smaller screens */
+@media (max-width: 600px) {
+
+    .card[data-size="large"],
+    .card[data-size="medium"],
+    .card[data-size="wide"] {
+        grid-column: span 1;
+        grid-row: auto;
+    }
+}
+
 .card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);

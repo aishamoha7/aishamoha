@@ -171,13 +171,15 @@
     }
 
     .container {
-        /* Adjust header grid for smaller screens if needed */
+        /* Adjust header grid for smaller screens to fit logo and actions */
         grid-template-columns: 1fr auto;
     }
 
     .actions {
-        display: none;
-        /* Often hidden on mobile/tablet if space is tight, or moved */
+        display: flex;
+        /* Show actions on tablet/mobile */
+        gap: 0.8rem;
+        /* Slightly tighter gap */
     }
 }
 
@@ -203,5 +205,23 @@
     /* Adjust logo for mobile */
     .logo a {
         font-size: 1.25rem;
+    }
+
+
+    /* Reduce menu font size for mobile to prevent overflow */
+    .link {
+        font-size: 0.85rem;
+        padding: 5px 5px;
+    }
+
+    /* Adjust actions for mobile fit */
+    .ctaBtn {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+    }
+
+    .themeBtn {
+        width: 35px;
+        height: 35px;
     }
 }

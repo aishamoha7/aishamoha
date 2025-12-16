@@ -52,60 +52,62 @@
 }
 
 /* Focus Lens Hover Effect */
+/* Base Link Styles */
 .link {
     font-size: 1rem;
     font-weight: bold;
     color: var(--text-main);
     position: relative;
     padding: 5px 10px;
-    /* Added padding for space for the lens */
     transition: color 0.3s ease;
 }
 
-/* Clear previous pseudo-elements if any from underline logic */
-.link::after,
-.link::before {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    transition: all 0.3s ease;
-    opacity: 0;
-    border-color: var(--text-new2);
-    /* Using the new teal color */
-}
-
-/* Top-Left Corner */
-.link::before {
-    top: 0;
-    left: 0;
-    border-top: 2px solid var(--text-new2);
-    border-left: 2px solid var(--text-new2);
-    transform: translate(5px, 5px);
-}
-
-/* Bottom-Right Corner */
-.link::after {
-    bottom: 0;
-    right: 0;
-    border-bottom: 2px solid var(--text-new2);
-    border-right: 2px solid var(--text-new2);
-    transform: translate(-5px, -5px);
-}
-
-/* Hover State */
 .link:hover {
     color: var(--text-new2);
 }
 
-.link:hover::before {
-    opacity: 1;
-    transform: translate(0, 0);
-}
+/* Focus Lens Hover Effect - iPad & Mobile Only (max-width: 1024px) */
+@media (max-width: 1024px) {
 
-.link:hover::after {
-    opacity: 1;
-    transform: translate(0, 0);
+    .link::after,
+    .link::before {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        transition: all 0.3s ease;
+        opacity: 0;
+        border-color: var(--text-new2);
+    }
+
+    /* Top-Left Corner */
+    .link::before {
+        top: 0;
+        left: 0;
+        border-top: 2px solid var(--text-new2);
+        border-left: 2px solid var(--text-new2);
+        transform: translate(5px, 5px);
+    }
+
+    /* Bottom-Right Corner */
+    .link::after {
+        bottom: 0;
+        right: 0;
+        border-bottom: 2px solid var(--text-new2);
+        border-right: 2px solid var(--text-new2);
+        transform: translate(-5px, -5px);
+    }
+
+    /* Hover State (Lens visible only on hover) */
+    .link:hover::before {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    .link:hover::after {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
 }
 
 /* Active State Styles */
@@ -207,21 +209,9 @@
         font-size: 1.25rem;
     }
 
-
     /* Reduce menu font size for mobile to prevent overflow */
     .link {
         font-size: 0.85rem;
         padding: 5px 5px;
-    }
-
-    /* Adjust actions for mobile fit */
-    .ctaBtn {
-        padding: 6px 14px;
-        font-size: 0.8rem;
-    }
-
-    .themeBtn {
-        width: 35px;
-        height: 35px;
     }
 }

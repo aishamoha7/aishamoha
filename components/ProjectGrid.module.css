@@ -35,13 +35,13 @@
 }
 
 @media (max-width: 600px) {
-    .section {
-        padding: 2rem 0;
-    }
-
     .grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
+    }
+
+    .header {
+        text-align: center;
     }
 }
 

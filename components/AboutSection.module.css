@@ -135,8 +135,7 @@
     }
 
     .visualContent {
-        width: 100%;
-        height: 350px;
+        display: none;
     }
 
     .heading {
@@ -146,6 +145,10 @@
 
     .textContent {
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Ensure flex children like label center */
     }
 
     .skillsGrid {

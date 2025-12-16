@@ -155,20 +155,34 @@
 
 @media (max-width: 600px) {
   .hero {
-    padding-bottom: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+    /* Much tighter as requested */
+    min-height: auto;
+    /* Allow height to shrink */
+  }
+
+  .headline {
+    font-size: 2rem;
+    /* Smaller for mobile portrait */
   }
 
   .intro {
     font-size: 1rem;
     padding: 0 10px;
+    margin-bottom: 1.5rem;
+    /* Reduce bottom margin too */
   }
 
-  /* Hide visual blob on mobile portrait as requested */
-  .heroVisual {
-    display: none;
+  .heroContent {
+    margin-bottom: 1.5rem;
+    /* Reduce gap between text and visual */
   }
 
-  .headline {
-    font-size: 2rem;
+  .visualShape {
+    width: 280px;
+    height: 280px;
+    /* Scale down blob */
+    /* Ensure it remains fully visible */
   }
 }

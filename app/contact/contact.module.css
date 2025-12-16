@@ -1,0 +1,164 @@
+.container {
+    padding: 8rem 20px;
+    min-height: 80vh;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+    font-size: 3.5rem;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+.contentWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.infoBlock h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--primary);
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.link {
+    font-size: 1.25rem;
+    color: var(--text-main);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.link:hover {
+    color: var(--text-light);
+}
+
+.socials {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.socialLink {
+    padding: 10px 20px;
+    border: 2px solid var(--text-muted);
+    border-radius: 50px;
+    color: var(--text-main);
+    transition: all 0.3s;
+    font-size: 0.9rem;
+    border-color: var(--primary);
+}
+
+.socialLink:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
+
+[data-theme='dark'] .socialLink:hover {
+    color: #f9fbfc;
+    /* Dark text on Lime primary */
+}
+
+
+.form {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.form:hover {
+    border-color: var(--primary);
+}
+
+.formGroup {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.formGroup input,
+.formGroup textarea {
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1rem;
+    color: var(--text-light);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(134, 154, 156);
+    outline: none;
+    transition: border-color 0.3s;
+    font-family: inherit;
+    resize: none;
+}
+
+[data-theme='dark'] .formGroup input,
+[data-theme='dark'] .formGroup textarea {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.541);
+}
+
+.formGroup label {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    font-size: 1rem;
+    color: var(--text-light);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* Floating Label Logic */
+.formGroup input:focus~label,
+.formGroup input:not(:placeholder-shown)~label,
+.formGroup textarea:focus~label,
+.formGroup textarea:not(:placeholder-shown)~label {
+    top: -10px;
+    font-size: 0.8em;
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+    border-bottom-color: var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .contentWrapper {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .form {
+        padding: 2rem;
+    }
+}

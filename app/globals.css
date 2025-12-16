@@ -1,0 +1,209 @@
+:root {
+  /* Brand Colors */
+  --primary: #013335;
+  /* Deep Teal/Green */
+  --secondary: #42CCB2;
+  /* Lime/Neon Green */
+  --accent: #FFFFFF;
+  /* White for contrast */
+
+  /* Text Colors */
+  --text-main: #00272B;
+  --text-light: #517579;
+  --text-muted: #ffffff70;
+
+  /* Backgrounds */
+  --background: #FFFFFF;
+  --card-bg: #F0F2F5;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.568);
+
+  /* Typography */
+  --font-main: var(--font-philosopher), sans-serif;
+  --font-body: 'Inter', sans-serif;
+  /* Fallback/Body font */
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+
+  /* Borders */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --primary: #42CCB2;
+  /* Lime becomes primary highlight */
+  --secondary: #023335;
+  /* Deep Teal becomes secondary */
+
+  --text-main: #F5F5F5;
+  --text-light: #ffffffb7;
+  --text-muted: #889999;
+
+  --background: #023335;
+  /* Darker Deep Teal */
+  --card-bg: #00272B;
+  --glass-bg: rgba(0, 39, 43, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.466);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-main);
+  background-color: var(--background);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Improve font rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+/* Typography Utilities */
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* Note: text-fill-color is non-standard but needed for this effect usually. 
+     For now, straightforward colors are safer, but leaving this utility for specific use cases 
+     where fallbacks are managed. */
+}
+
+/* Button Component */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 50px;
+  /* Pill shape */
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  font-family: var(--font-main);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+/* Correcting Button Colors for Theme Logic */
+/* Light Mode: Primary (Dark), Text (White) */
+/* Dark Mode: Primary (Lime), Text (Dark) */
+
+body[data-theme='light'] .btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+body[data-theme='dark'] .btn-primary {
+  background-color: var(--primary);
+  color: #023335;
+}
+
+/* Fallback */
+[data-theme='dark'] .btn-primary {
+  color: #023335;
+}
+
+
+.btn-secondary {
+  background-color: transparent;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+/* Grid Layouts */
+.grid-bento {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+/* Glassmorphism */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+}

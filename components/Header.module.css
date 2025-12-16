@@ -1,0 +1,159 @@
+.header {
+    padding: 1.3rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .header {
+    background: rgba(0, 26, 29, 0.8);
+    /* Darker blur bg */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+.logo {
+    position: relative;
+    z-index: 2;
+    justify-self: start;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.5px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-self: center;
+    margin-left: 2rem;
+}
+
+.link {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-main);
+    position: relative;
+    padding: 5px 0;
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--secondary);
+    transition: width 0.3s ease;
+}
+
+.link:hover::after {
+    width: 100%;
+}
+
+.link:hover {
+    color: var(--primary);
+}
+
+[data-theme='dark'] .link:hover {
+    color: var(--secondary);
+}
+
+.actions {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.ctaBtn {
+    background-color: var(--primary);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.ctaBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(1, 51, 53, 0.2);
+    /* Shadow based on primary color */
+}
+
+/* Theme specific overrides if needed, but primary text on white usually works, or reverse. 
+   Let's check dark mode. Primary is Lime in dark mode. Text should be dark. */
+[data-theme='dark'] .ctaBtn {
+    background-color: var(--primary);
+    /* Lime */
+    color: #00272B;
+    /* Dark Text */
+}
+
+.themeBtn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--text-muted);
+    background: transparent;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.themeBtn:hover {
+    background: var(--card-bg);
+    transform: rotate(15deg);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+        /* For MVP we hide nav on mobile or rely on a burger menu. 
+                        A simpler approach for now is just wrapping/stacking or hiding non-essentials.
+                        Let's keep it simple: reduce gap and maybe hide less important links or just scrollable x. */
+        /* Re-enabling for basic mobile view */
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: var(--card-bg);
+        justify-content: space-around;
+        padding: 15px;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        border-top: 1px solid var(--glass-border);
+    }
+
+    .themeBtn {
+        margin-left: 0;
+    }
+
+    .header {
+        padding: 1rem 0;
+    }
+}

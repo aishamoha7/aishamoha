@@ -1,0 +1,140 @@
+.section {
+    padding: 6rem 0;
+    background-color: var(--background);
+    text-align: center;
+}
+
+.heading {
+    font-size: 2.5rem;
+    color: var(--text-main);
+    margin-bottom: 4rem;
+}
+
+.slider {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.track {
+    flex: 1;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--text-main);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    background: var(--secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #00272B;
+}
+
+.name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.2rem;
+}
+
+.role {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.navBtn {
+    background: transparent;
+    border: 1px solid var(--text-light);
+    color: var(--text-light);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navBtn:hover {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: #00272B;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 2rem;
+    color: var(--text-light);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: var(--text-muted);
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.3;
+    color: var(--primary);
+}
+
+.activeDot {
+    opacity: 1;
+    background: var(--primary);
+}
+
+/* RWD */
+@media (max-width: 600px) {
+    .navBtn {
+        display: none;
+        /* Hide arrows on mobile, rely on dots or swipe (if implemented) */
+    }
+
+    .quote {
+        font-size: 1.2rem;
+    }
+}

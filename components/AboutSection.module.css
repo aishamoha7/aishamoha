@@ -1,0 +1,139 @@
+.section {
+    padding: 6rem 0;
+    background-color: var(--background);
+    position: relative;
+}
+
+.contentWrapper {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.textContent {
+    flex: 1;
+}
+
+.visualContent {
+    flex: 1;
+    position: relative;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.label {
+    display: inline-block;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.heading {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+}
+
+.bio {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.skillsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skillTag {
+    padding: 8px 16px;
+    background: var(--card-bg);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.skillTag:hover {
+    border-color: var(--secondary);
+    transform: translateY(-2px);
+}
+
+.statCard {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: var(--card-bg);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    z-index: 2;
+    animation: float 6s ease-in-out infinite;
+}
+
+.sc2 {
+    right: 20px;
+    bottom: 20px;
+    background: var(--primary);
+    color: #fff;
+    /* Ensure contrast on primary */
+    width: 160px;
+    height: 160px;
+    z-index: 1;
+    animation-delay: 1s;
+}
+
+.statNumber {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.statLabel {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+}
+
+[data-theme='dark'] .sc2 {
+    color: #00272B;
+    /* Dark text on Lime primary */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* RWD */
+@media (max-width: 900px) {
+    .contentWrapper {
+        flex-direction: column;
+    }
+
+    .visualContent {
+        width: 100%;
+        height: 300px;
+    }
+}

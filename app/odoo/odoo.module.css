@@ -1,0 +1,77 @@
+.container {
+    padding: 130px 30px;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 50px;
+    opacity: 0.8;
+}
+
+.highlightSection {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 50px;
+    border-left: 5px solid var(--primary);
+}
+
+.introContent h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.introContent p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.tasksContainer {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tasksContainer h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--primary);
+    text-align: center;
+}
+
+.taskList {
+    list-style: none;
+    display: grid;
+    gap: 20px;
+}
+
+.taskItem {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.2s;
+    font-size: 1.05rem;
+}
+
+.taskItem:hover {
+    transform: translateX(10px);
+    background-color: rgba(0, 0, 0, 0.05);
+    /* slightly darker hover */
+}
+
+[data-theme='dark'] .taskItem:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.icon {
+    font-size: 1.2rem;
+}

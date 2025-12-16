@@ -1,0 +1,52 @@
+.section {
+    padding: 4rem 0;
+    background-color: var(--background);
+}
+
+.header {
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.heading {
+    font-size: 2.5rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.subtext {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columns for flexible bento layout */
+    grid-auto-rows: minmax(280px, auto);
+    gap: var(--spacing-lg);
+}
+
+/* RWD */
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    /* Reset spans on mobile so everything stacks */
+    /* We need to target the child components here, but CSS modules scopes classes.
+     We'll rely on global selection or ensure ProjectCard passes styles correctly.
+     Actually, since we used data attributes in ProjectCard css, we should override them here if possible,
+     OR simply change the grid definition.
+     
+     If grid becomes 1 col, spans of 2 will just take full width (which is 1 col).
+     So it naturally degrades gracefully usually.
+  */
+}

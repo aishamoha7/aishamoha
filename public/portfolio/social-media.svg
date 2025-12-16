@@ -1,0 +1,45 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#0F172A"/>
+  
+  <!-- Central Mobile Phone Interaction -->
+  <rect x="250" y="80" width="300" height="440" rx="24" fill="#1E293B" stroke="#334155" stroke-width="8"/>
+  
+  <!-- Screen Header -->
+  <rect x="270" y="110" width="260" height="40" rx="4" fill="#0F172A"/>
+  <circle cx="290" cy="130" r="10" fill="#3B82F6"/> <!-- Avatar -->
+  <rect x="310" y="125" width="100" height="10" rx="2" fill="#64748B"/> <!-- Name -->
+  
+  <!-- Post Image Area -->
+  <rect x="270" y="170" width="260" height="200" rx="4" fill="#0F172A"/>
+  <!-- Image placeholder elements -->
+  <circle cx="400" cy="270" r="40" fill="#8B5CF6" fill-opacity="0.5"/>
+  <path d="M270 370 L340 300 L400 340 L450 290 L530 370 V370 H270 Z" fill="#3B82F6" fill-opacity="0.3"/>
+  
+  <!-- Engagement Metrics / Overlay -->
+  <rect x="420" y="280" width="160" height="90" rx="8" fill="#1E293B" stroke="#334155" stroke-width="2" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.3))"/>
+  
+  <!-- Heart Icon -->
+  <path d="M445 310 C445 305 450 300 455 300 C460 300 465 305 465 310 L455 320 Z" fill="#EF4444"/> 
+  <path d="M465 310 C465 305 470 300 475 300 C480 300 485 305 485 310 L475 320 L465 310 Z" fill="#EF4444"/>
+  <path d="M445 310 C440 305 440 295 455 295 C460 295 465 298 465 302" fill="none"/> <!-- Just simplified shape above -->
+  <!-- Proper Heart -->
+  <path d="M445 305 C445 299.5 449.5 295 455 295 C459.1 295 462.6 297.2 464.4 300.5 C466.2 297.2 469.8 295 473.8 295 C479.4 295 483.8 299.5 483.8 305 C483.8 316.5 464.4 328 464.4 328 C464.4 328 445 316.5 445 305 Z" fill="#EF4444"/>
+
+  <rect x="495" y="300" width="60" height="8" rx="2" fill="#EF4444" fill-opacity="0.8"/> <!-- Likes bar -->
+  <rect x="445" y="340" width="100" height="8" rx="2" fill="#94A3B8"/>
+  
+  <!-- Floating Elements (Likes/Reactions) -->
+  <circle cx="200" cy="200" r="20" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+  <text x="192" y="206" fill="#F59E0B" font-family="sans-serif" font-size="20">👍</text>
+  
+  <circle cx="600" cy="150" r="30" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+  <text x="585" y="160" fill="#EF4444" font-family="sans-serif" font-size="30">❤️</text>
+  
+  <circle cx="620" cy="400" r="25" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+  <text x="608" y="410" fill="#3B82F6" font-family="sans-serif" font-size="24">🚀</text>
+
+  <!-- Trend Graph -->
+  <path d="M550 500 L580 480 L610 490 L650 440" stroke="#10B981" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="650" cy="440" r="4" fill="#10B981"/>
+
+</svg>

@@ -1,0 +1,149 @@
+.container {
+  width: 100%;
+  max-width: 1400px;
+  /* Slight increase for wide screens */
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.hero {
+  min-height: 90vh;
+  /* Almost full viewport */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroContent {
+  flex: 1;
+  max-width: 1100px;
+  z-index: 2;
+}
+
+.label {
+  display: inline-block;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--secondary);
+  /* Lime pop */
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.headline {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+}
+
+.highlight {
+  color: var(--primary);
+  /* Keep consistent or use outline effect */
+  -webkit-text-stroke: 1px var(--text-main);
+  /* Optional cool effect */
+  color: transparent;
+  /* Makes it an outline text */
+}
+
+/* Dark mode adjustment for outline text */
+@media (prefers-color-scheme: dark) {
+  .highlight {
+    -webkit-text-stroke: 1px var(--text-main);
+  }
+}
+
+[data-theme='dark'] .highlight {
+  -webkit-text-stroke: 1px #F5F5F5;
+}
+
+
+.intro {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+.intro strong {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.ctaGroup {
+  display: flex;
+  gap: 1rem;
+}
+
+.heroVisual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.visualShape {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(45deg, var(--secondary), var(--primary));
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: morph 8s ease-in-out infinite;
+  opacity: 0.8;
+  filter: blur(40px);
+  /* Soft blob effect */
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+
+  25% {
+    border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+  }
+
+  50% {
+    border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+  }
+
+  75% {
+    border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+  }
+
+  100% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding-top: 6rem;
+  }
+
+  .heroContent {
+    max-width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  .ctaGroup {
+    justify-content: center;
+  }
+
+  .headline {
+    font-size: 2.5rem;
+  }
+
+  .heroImage {
+    max-width: 300px;
+  }
+}

@@ -1,0 +1,110 @@
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card-bg);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    min-height: 300px;
+    /* Minimal height for grid cell */
+}
+
+/* Bento Sizing Helpers via data attribute or class */
+.card[data-size="large"] {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.card[data-size="medium"] {
+    grid-column: span 1;
+    grid-row: span 1;
+    /* or 2 depending on design */
+}
+
+.card[data-size="wide"] {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.imageContainer {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.imagePlaceholder {
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .imagePlaceholder {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 39, 43, 0.6);
+    /* Dark tint */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+.viewBtn {
+    padding: 10px 20px;
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+    border-radius: 20px;
+    font-weight: bold;
+    background: rgba(130, 160, 157, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.content {
+    padding: 1.5rem;
+    background: var(--card-bg);
+    z-index: 2;
+}
+
+.category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--primary);
+    /* Pop color */
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.title {
+    font-size: 1.25rem;
+    color: var(--text-main);
+    margin: 0;
+}
+
+/* Dark mode tweaks if needed specifically */
+[data-theme='dark'] .title {
+    color: #F5F5F5;
+}

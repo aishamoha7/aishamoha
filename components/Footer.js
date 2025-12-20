@@ -1,5 +1,21 @@
 import styles from "./Footer.module.css";
-import { Github, Instagram, Facebook } from "lucide-react";
+import { Github, Instagram } from "lucide-react";
+
+const FacebookIcon = ({ size = 24 }) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+    >
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+);
 
 const WhatsAppIcon = ({ size = 24 }) => (
     <svg
@@ -49,7 +65,7 @@ export default function Footer() {
                     <div className={styles.socials}>
                         <a href="https://github.com/aishamoha7"><Github size={18} /></a>
                         <a href="https://www.instagram.com/caaisha_sheikh_mohamed?igsh=bmJ2YmhzbXJvb2Nr"><Instagram size={18} /></a>
-                        <a href="https://www.facebook.com/aisha.sheikh.mohamed.434700"><Facebook size={18} /></a>
+                        <a href="https://www.facebook.com/aisha.sheikh.mohamed.434700"><FacebookIcon size={18} /></a>
                         <a href="https://wa.me/252770790727" target="_blank" rel="noopener noreferrer"><WhatsAppIcon size={20} /></a>
                     </div>
                 </div>

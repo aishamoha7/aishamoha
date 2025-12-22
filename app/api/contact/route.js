@@ -1,56 +1,37 @@
-import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from "resend";
 
-export async function POST(request) {
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+export async function POST(req) {
     try {
-        const { name, email, message } = await request.json();
+        const { name, email, message } = await req.json();
 
-        // Validate input
+        // Basic validation
         if (!name || !email || !message) {
-            return NextResponse.json(
-                { error: 'Missing required fields' },
+            return Response.json(
+                { success: false, error: "Missing required fields" },
                 { status: 400 }
             );
         }
 
-        // Create transporter
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS,
-            },
+        await resend.emails.send({
+            from: "Portfolio <onboarding@resend.dev>",
+            to: ["caishamohamed252@gmail.com"],
+            subject: `New message from ${name}`,
+            reply_to: email,
+            html: `
+        <h2>New Contact Message</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong><br/>${message.replace(/\n/g, "<br>")}</p>
+      `,
         });
 
-        // Email options
-        const mailOptions = {
-            from: process.env.EMAIL_USER,
-            to: 'caishamohamed252@gmail.com', // Target email
-            replyTo: email, // Allow replying directly to the sender
-            subject: `New Contact Form Submission from ${name}`,
-            text: `
-Name: ${name}
-Email: ${email}
-Message:
-${message}
-            `,
-            html: `
-<h3>New Contact Form Submission</h3>
-<p><strong>Name:</strong> ${name}</p>
-<p><strong>Email:</strong> ${email}</p>
-<p><strong>Message:</strong></p>
-<p>${message.replace(/\n/g, '<br>')}</p>
-            `,
-        };
-
-        // Send email
-        await transporter.sendMail(mailOptions);
-
-        return NextResponse.json({ success: true, message: 'Email sent successfully!' }, { status: 200 });
+        return Response.json({ success: true, message: "Email sent successfully!" });
     } catch (error) {
-        console.error('Error sending email:', error);
-        return NextResponse.json(
-            { error: 'Failed to send email. Please try again later.' },
+        console.error("Resend error:", error);
+        return Response.json(
+            { success: false, error: error.message },
             { status: 500 }
         );
     }

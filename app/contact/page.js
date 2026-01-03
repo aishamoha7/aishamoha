@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import styles from './contact.module.css';
+import ScrollAnimation from '@/components/ScrollAnimation';
 
 export default function Contact() {
     const [status, setStatus] = useState({ loading: false, success: false, error: '' });
@@ -39,14 +40,14 @@ export default function Contact() {
 
     return (
         <div className={`container ${styles.container}`}>
-            <div className={styles.header}>
+            <ScrollAnimation className={styles.header}>
                 <h1 className={`${styles.title} animate-fade-in`}>Let's Create Together</h1>
                 <p className={`${styles.subtitle} animate-fade-in delay-100`}>
                     Have a project in mind? Reach out and let's start the conversation.
                 </p>
-            </div>
+            </ScrollAnimation>
 
-            <div className={`${styles.contentWrapper} animate-fade-in delay-200`}>
+            <ScrollAnimation className={`${styles.contentWrapper} animate-fade-in delay-200`} delay={0.2}>
                 <div className={styles.contactInfo}>
                     <div className={styles.infoBlock}>
                         <h3>Email Me</h3>
@@ -91,7 +92,7 @@ export default function Contact() {
                         {status.loading ? 'Sending...' : 'Send Message'}
                     </button>
                 </form>
-            </div>
+            </ScrollAnimation>
         </div>
     );
 }

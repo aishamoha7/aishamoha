@@ -1,5 +1,6 @@
 import styles from './portfolio.module.css';
 import Link from 'next/link';
+import ScrollAnimation from '@/components/ScrollAnimation';
 
 const projects = [
     {
@@ -55,12 +56,14 @@ const projects = [
 export default function Portfolio() {
     return (
         <div className={`container ${styles.container}`}>
-            <h1 className={styles.title}>My Portfolio</h1>
-            <p className={styles.subtitle}>A selection of my recent work in design and development.</p>
+            <ScrollAnimation>
+                <h1 className={styles.title}>My Portfolio</h1>
+                <p className={styles.subtitle}>A selection of my recent work in design and development.</p>
+            </ScrollAnimation>
 
             <div className={styles.grid}>
-                {projects.map((project) => (
-                    <div key={project.id} className={styles.card}>
+                {projects.map((project, index) => (
+                    <ScrollAnimation key={project.id} className={styles.card} delay={index * 0.1}>
                         <div className={styles.imageContainer}>
                             {/* In a real app, use next/image. Using img for external placeholder simplicity without config */}
                             <img src={project.image} alt={project.title} className={styles.image} />
@@ -78,7 +81,7 @@ export default function Portfolio() {
                                 ))}
                             </div>
                         </div>
-                    </div>
+                    </ScrollAnimation>
                 ))}
             </div>
         </div>

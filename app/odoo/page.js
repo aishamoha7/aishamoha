@@ -1,4 +1,5 @@
 import styles from './odoo.module.css';
+import ScrollAnimation from '@/components/ScrollAnimation';
 
 const tasks = [
     "Managing Sales, Invoices, and Quotations",
@@ -13,20 +14,22 @@ const tasks = [
 export default function Odoo() {
     return (
         <div className={`container ${styles.container}`}>
-            <h1 className={styles.title}>Odoo ERP Experience</h1>
-            <p className={styles.subtitle}>Specialized expertise in managing business operations with Odoo.</p>
+            <ScrollAnimation>
+                <h1 className={styles.title}>Odoo ERP Experience</h1>
+                <p className={styles.subtitle}>Specialized expertise in managing business operations with Odoo.</p>
 
-            <div className={styles.highlightSection}>
-                <div className={styles.introContent}>
-                    <h2>Why I Work with Odoo</h2>
-                    <p>
-                        As an Odoo specialist, I bridge the gap between technical system capabilities and practical business needs.
-                        My experience ensures accurate records, efficient workflows, and data-driven decision making for businesses.
-                    </p>
+                <div className={styles.highlightSection}>
+                    <div className={styles.introContent}>
+                        <h2>Why I Work with Odoo</h2>
+                        <p>
+                            As an Odoo specialist, I bridge the gap between technical system capabilities and practical business needs.
+                            My experience ensures accurate records, efficient workflows, and data-driven decision making for businesses.
+                        </p>
+                    </div>
                 </div>
-            </div>
+            </ScrollAnimation>
 
-            <div className={styles.tasksContainer}>
+            <ScrollAnimation className={styles.tasksContainer} delay={0.2}>
                 <h2>Key Responsibilities</h2>
                 <ul className={styles.taskList}>
                     {tasks.map((task, index) => (
@@ -36,7 +39,7 @@ export default function Odoo() {
                         </li>
                     ))}
                 </ul>
-            </div>
+            </ScrollAnimation>
         </div>
     );
 }

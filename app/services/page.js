@@ -1,4 +1,5 @@
 import styles from './services.module.css';
+import ScrollAnimation from '@/components/ScrollAnimation';
 
 const services = [
     {
@@ -30,15 +31,17 @@ const services = [
 export default function Services() {
     return (
         <div className={`container ${styles.container}`}>
-            <h1 className={styles.title}>My Services</h1>
-            <p className={styles.subtitle}>Professional digital solutions tailored to your needs.</p>
+            <ScrollAnimation>
+                <h1 className={styles.title}>My Services</h1>
+                <p className={styles.subtitle}>Professional digital solutions tailored to your needs.</p>
+            </ScrollAnimation>
 
             <div className={styles.grid}>
                 {services.map((service, index) => (
-                    <div key={index} className={styles.card}>
+                    <ScrollAnimation key={index} className={styles.card} delay={index * 0.1}>
                         <h2 className={styles.cardTitle}>{service.title}</h2>
                         <p className={styles.cardDescription}>{service.description}</p>
-                    </div>
+                    </ScrollAnimation>
                 ))}
             </div>
         </div>

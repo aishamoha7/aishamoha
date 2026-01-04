@@ -111,3 +111,13 @@
     font-size: 0.99rem;
     color: #9ca3af;
 }
+
+.developerLink {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.developerLink:hover {
+    color: var(--secondary);
+}

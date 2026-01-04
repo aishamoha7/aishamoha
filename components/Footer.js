@@ -73,7 +73,7 @@ export default function Footer() {
             </div>
 
             <div className={styles.bottom}>
-                © {new Date().getFullYear()} All rights reserved. Developed by REESH
+                © {new Date().getFullYear()} All rights reserved. Developed by <a href="https://reeshdesigns.com" target="_blank" rel="noopener noreferrer" className={styles.developerLink}>REESH</a>
             </div>
         </footer>
     );

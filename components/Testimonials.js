@@ -6,19 +6,19 @@ const TESTIMONIALS = [
     {
         id: 1,
         name: "Sarah Jenkins",
-        role: "CEO, EcoBrand",
+        role: "CEO, Branding",
         text: "Aisha transformed our brand identity completely. Her eye for modern design and detail is unmatched. Highly recommended!"
     },
     {
         id: 2,
         name: "Mohamed Ali",
-        role: "Director, TechFlow",
+        role: "Director, Development",
         text: "The Odoo ERP implementation was seamless. Aisha not only understood the technical side but also our business processes."
     },
     {
         id: 3,
         name: "Elena Rodriguez",
-        role: "Fashion Blogger",
+        role: "Video Editor",
         text: "Her video editing skills brought my content to life. Engagement on my channel has doubled since we started working together."
     },
 ];

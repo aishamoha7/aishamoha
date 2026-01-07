@@ -4,7 +4,7 @@ import styles from './ProjectGrid.module.css';
 const PROJECTS = [
     {
         id: 1,
-        title: "EcoBrand Identity",
+        title: "Social Media Posters",
         category: "Branding",
         image: "/images/projects/ecobrand.png",
         size: "large",
@@ -12,7 +12,7 @@ const PROJECTS = [
     },
     {
         id: 2,
-        title: "FinTech Dashboard",
+        title: "Website Design",
         category: "UI/UX Design",
         image: "/images/projects/fintech.png",
         size: "wide",
@@ -20,7 +20,7 @@ const PROJECTS = [
     },
     {
         id: 3,
-        title: "Odoo ERP Implementation",
+        title: "Website Development",
         category: "Development",
         image: "/images/projects/odoo.png",
         size: "wide",
@@ -28,15 +28,15 @@ const PROJECTS = [
     },
     {
         id: 4,
-        title: "Fashion Editorial",
+        title: "Digital Video Editing",
         category: "Video Editing",
-        image: "/images/projects/fashion_v2.png",
+        image: "/portfolio/video-editing-man.png",
         size: "wide",
         link: "/portfolio"
     },
     {
         id: 5,
-        title: "Social Media Kit",
+        title: "Social Media Content",
         category: "Content Creation",
         image: "/images/projects/social.png",
         size: "wide",

@@ -61,14 +61,14 @@
 .avatar {
     width: 50px;
     height: 50px;
-    background: var(--secondary);
+    background: var(--text-new2);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     font-size: 1.25rem;
-    color: #00272B;
+    color: var(--text-main);
 }
 
 .name {
@@ -85,8 +85,8 @@
 
 .navBtn {
     background: transparent;
-    border: 1px solid var(--text-light);
-    color: var(--text-light);
+    border: 1px solid var(--primary);
+    color: var(--primary);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -101,7 +101,7 @@
 .navBtn:hover {
     background: var(--secondary);
     border-color: var(--secondary);
-    color: #00272B;
+    color: var(--primary);
 }
 
 .dots {
@@ -109,6 +109,7 @@
     justify-content: center;
     gap: 8px;
     margin-top: 2rem;
+
 }
 
 .dot {
@@ -118,6 +119,7 @@
     border-radius: 50%;
     cursor: pointer;
     opacity: 0.3;
+    color: var(--text-new2);
 }
 
 .activeDot {

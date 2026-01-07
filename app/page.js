@@ -19,7 +19,7 @@ export default function Home() {
           </h1>
           <p className={`${styles.intro} animate-fade-in delay-200`}>
             I am <strong></strong> A multi-skilled creative professional specializing in graphic design,
-            modern website development, content creation, Odoo development, and professional video editing.
+            modern website development, content creation, Odoo development, and video editor.
           </p>
           <div className={`${styles.ctaGroup} animate-fade-in delay-300`}>
             <Link href="/portfolio" className="btn btn-primary">View Projects</Link>

@@ -16,7 +16,7 @@ const projects = [
         title: "TechCorp Website",
         category: "Web Design",
         description: "Modern, responsive corporate website with Next.js.",
-        image: "/portfolio/techcorp.jpg",
+        image: "/portfolio/techcorp-laptop.png",
         tools: ["Next.js", "CSS Modules", "React"]
     },
     {
@@ -32,7 +32,7 @@ const projects = [
         title: "Product Launch Video",
         category: "Video Editing",
         description: "Cinematic teaser video for a new tech gadget.",
-        image: "/portfolio/video-editing.svg",
+        image: "/portfolio/video-editing-man.png",
         tools: ["After Effects", "Premiere Pro"]
     },
     {

@@ -15,7 +15,7 @@ export async function POST(req) {
         );
 
         if (!response.ok) {
-            throw new Error("Formspree submission failed");
+            throw new Error("Your Message failed to send");
         }
 
         return Response.json({ success: true });

@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  env: {
+    FORMSPREE_FORM_ID: process.env.FORMSPREE_FORM_ID,
+  },
 };
 
 export default nextConfig;

@@ -15,14 +15,14 @@ export async function POST(req) {
         );
 
         if (!response.ok) {
-            throw new Error("Your Message failed to send");
+            const err = await response.text();
+            throw new Error(err);
         }
 
         return Response.json({ success: true });
     } catch (error) {
-        return Response.json(
-            { success: false, error: error.message },
-            { status: 500 }
-        );
+        console.error("Formspree error:", error.message);
+        return Response.json({ success: false }, { status: 500 });
     }
 }
+

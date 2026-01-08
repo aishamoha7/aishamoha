@@ -22,7 +22,13 @@ export async function POST(req) {
         return Response.json({ success: true });
     } catch (error) {
         console.error("Formspree error:", error.message);
-        return Response.json({ success: false }, { status: 500 });
+        return Response.json(
+            {
+                success: false,
+                error: `Server Error: ${error.message} (Form ID: ${process.env.FORMSPREE_FORM_ID})`
+            },
+            { status: 500 }
+        );
     }
 }
 

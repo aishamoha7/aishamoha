@@ -63,9 +63,9 @@ export default function Footer() {
                 <div>
                     <h3 styles={{ fontSize: "1.1rem" }}>Connect</h3>
                     <div className={styles.socials}>
-                        <a href="https://github.com/aishamoha7"><Github size={18} /></a>
-                        <a href="https://www.instagram.com/caaisha_sheikh_mohamed?igsh=bmJ2YmhzbXJvb2Nr"><Instagram size={18} /></a>
-                        <a href="https://www.facebook.com/aisha.sheikh.mohamed.434700"><FacebookIcon size={18} /></a>
+                        <a href="https://github.com/aishamoha7" target="_blank" rel="noopener noreferrer"><Github size={18} /></a>
+                        <a href="https://www.instagram.com/caaisha_sheikh_mohamed?igsh=bmJ2YmhzbXJvb2Nr" target="_blank" rel="noopener noreferrer"><Instagram size={18} /></a>
+                        <a href="https://www.facebook.com/aisha.sheikh.mohamed.434700" target="_blank" rel="noopener noreferrer"><FacebookIcon size={18} /></a>
                         <a href="https://wa.me/252770790727" target="_blank" rel="noopener noreferrer"><WhatsAppIcon size={20} /></a>
                     </div>
                 </div>

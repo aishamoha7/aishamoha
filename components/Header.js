@@ -33,7 +33,6 @@ export default function Header() {
                     <Link href="/about" className={`${styles.link} ${pathname === '/about' ? styles.active : ''}`}>About</Link>
                     <Link href="/services" className={`${styles.link} ${pathname === '/services' ? styles.active : ''}`}>Services</Link>
                     <Link href="/portfolio" className={`${styles.link} ${pathname === '/portfolio' ? styles.active : ''}`}>Portfolio</Link>
-                    <Link href="/odoo" className={`${styles.link} ${pathname === '/odoo' ? styles.active : ''}`}>Odoo ERP</Link>
                     <Link href="/contact" className={`${styles.link} ${pathname === '/contact' ? styles.active : ''}`}>Contact</Link>
                 </nav>
                 <div className={styles.actions}>

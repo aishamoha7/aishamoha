@@ -53,6 +53,16 @@ const projects = [
     }
 ];
 
+const erpTasks = [
+    "Managing Sales, Invoices, and Quotations",
+    "Handling Customers and Vendors (CRM)",
+    "Creating and updating Products and Price Lists",
+    "Monitoring Inventory and Stock Movements",
+    "Generating Financial and Operational Reports",
+    "Supporting basic Odoo system customization",
+    "Data entry and system organization"
+];
+
 export default function Portfolio() {
     return (
         <div className={`container ${styles.container}`}>
@@ -83,6 +93,34 @@ export default function Portfolio() {
                         </div>
                     </ScrollAnimation>
                 ))}
+            </div>
+
+            {/* Transferred Odoo ERP Content */}
+            <div className={styles.erpSection}>
+                <ScrollAnimation>
+                    <h2 className={styles.erpTitle}>Business Operations & ERP (Odoo)</h2>
+                    <div className={styles.highlightSection}>
+                        <div className={styles.introContent}>
+                            <h2>Why I Work with Odoo</h2>
+                            <p>
+                                As an Odoo specialist, I bridge the gap between technical system capabilities and practical business needs.
+                                My experience ensures accurate records, efficient workflows, and data-driven decision making for businesses.
+                            </p>
+                        </div>
+                    </div>
+                </ScrollAnimation>
+
+                <ScrollAnimation className={styles.tasksContainer} delay={0.2}>
+                    <h2 className={styles.erpTitle}>Key Responsibilities</h2>
+                    <ul className={styles.taskList}>
+                        {erpTasks.map((task, index) => (
+                            <li key={index} className={styles.taskItem}>
+                                <span className={styles.icon}>⚙️</span>
+                                {task}
+                            </li>
+                        ))}
+                    </ul>
+                </ScrollAnimation>
             </div>
         </div>
     );

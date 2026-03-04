@@ -122,6 +122,86 @@
     border-radius: 4px;
 }
 
-[data-theme='dark'] .tag {
-    background-color: rgba(255, 255, 255, 0.1);
+
+/* ERP Section Styles (Transferred from Odoo) */
+.erpSection {
+    margin-top: 80px;
+    padding-top: 50px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .erpSection {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.erpTitle {
+    font-size: 2.2rem;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.highlightSection {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 50px;
+    border-left: 5px solid var(--primary);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.introContent h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.introContent p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.tasksContainer {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tasksContainer h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: var(--primary);
+    text-align: center;
+}
+
+.taskList {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    padding: 0;
+}
+
+.taskItem {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 1.05rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.taskItem:hover {
+    transform: translateX(10px);
+    background-color: rgba(0, 0, 0, 0.02);
+    border-left: 3px solid var(--primary);
+}
+
+[data-theme='dark'] .taskItem:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.icon {
+    font-size: 1.2rem;
 }

@@ -54,7 +54,7 @@ export default function Footer() {
                         <li><a href="about">About Me</a></li>
                         <li><a href="services">Services</a></li>
                         <li><a href="portfolio">Portfolio</a></li>
-                        <li><a href="odoo">Odoo ERP</a></li>
+                        <li><a href="contact">Contact Us</a></li>
 
                     </ul>
                 </div>

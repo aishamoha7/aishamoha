@@ -11,8 +11,7 @@ export default function Home() {
     <div className={styles.container}>
       {/* HERO SECTION */}
       <section className={styles.hero}>
-        <ScrollAnimation className={styles.heroContent} variant="fadeUp">
-          <span className={`${styles.label} animate-fade-in`}></span>
+        <ScrollAnimation className={`${styles.heroContent} animate-fade-in delay-100`} variant="slideUp" delay={0.1}>
           <h1 className={`${styles.headline} animate-fade-in delay-100`}>
             Hi, I’m <br />
             <span className={styles.highlight}>Aisha Mohamed</span>
